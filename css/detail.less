@@ -1,0 +1,73 @@
+@import 'reset';
+@import 'animate';
+@import 'common';
+
+.headerBox {
+  padding-bottom: .6rem;
+  background: @blue-moderate;
+  border-bottom: .04rem solid @blue-darken;
+  .userInfo {
+    position: relative;
+    padding: .5rem .4rem;
+    .picture {
+      position: absolute;
+      top: .5rem;
+      left: .4rem;
+      width: 1.12rem;
+      height: 1.12rem;
+      border-radius: 50%;
+    }
+    .vote {
+      position: absolute;
+      top: .5rem;
+      right: .4rem;
+      width: 1rem;
+      height: 1.12rem;
+      lin-height: 1.12rem;
+      text-align: center;
+      color: @orange;
+      font-size: .4rem;
+    }
+    .info, .bio {
+      margin: 0 1.1rem 0 1.22rem;
+      height: .56rem;
+      line-height: .56rem;
+      color: #FFF;
+      font-size: .3rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .info {
+      span:nth-of-type(1) {
+        font-weight: bold;
+      }
+      span:nth-last-of-type(1) {
+        font-size: .28rem;
+      }
+    }
+  }
+}
+
+.slogan {
+  padding: 0 .4rem;
+  line-height: .6rem;
+  font-size: .32rem;
+  color: #FFF382;
+}
+
+.voteBtn {
+  display: block;
+  margin: .4rem auto 0 auto;
+  width: 2rem;
+  height: .6rem;
+  line-height: .6rem;
+  text-align: center;
+  color: #FFF;
+  font-size: .3rem;
+  background: @blue-darken;
+  &:active {
+    background: darken(@blue-darken, 15%)
+  }
+}
+

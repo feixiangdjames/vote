@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>投票详情页</title>
+    <link rel="stylesheet/less" href="css/detail.less">
+    <script src="js/less-2.5.3.min.js"></script>
+    <script>
+        ~function anonymous(window) {
+            let computedREM=function computedREM() {
+                let winW=document.documentElement.clientWidth,
+                    desW=640;
+                if(winW>=desW){
+                    document.documentElement.style.fonts='100px';
+                }
+                document.documentElement.style.fonts=winW/desW * 100+'px';
+            };
+            computedREM();
+            window.addEventListener('resize',computedREM);
+        }(window)
+    </script>
+</head>
+<body>
+<main class="mainBox">
+    <nav class="navBox"></nav>
+    <header class="headerBox">
+        <div class="userInfo">
+            <img src="img/man.png" alt="picture" class="picture">
+            <p class="info">
+                <span>name</span>
+                <span>code</span>
+            </p>
+            <p class="bio">343</p>
+            <div class="vote">7</div>
+        </div>
+        <div class="slogan">My name is James</div>
+        <a href="javescript:;" class="voteBtn">select</a>
+    </header>
+</main>
+</body>
+</html>
