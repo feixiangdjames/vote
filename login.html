@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <title>登录</title>
+    <script>
+        function computedREM () {
+            let winW=document.documentElement.offsetWidth,
+             desW=640;
+            if(winW>=desW){
+                document.documentElement.style.fontSize='100px';
+                return;
+            }
+            document.documentElement.fontSize=winW/desW * 100 +'px';
+        };
+        computedREM();
+        window.addEventListener('reSize',computedREM);
+
+    </script>
 </head>
+
 <body>
-<script></script>
+
 </body>
 </html>
