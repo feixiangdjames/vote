@@ -4,23 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <title>登录</title>
+    <link rel="stylesheet/less" href="css/login.less">
+    <script src="js/less-2.5.3.min.js"></script>
     <script>
-        function computedREM () {
-            let winW=document.documentElement.offsetWidth,
-             desW=640;
-            if(winW>=desW){
-                document.documentElement.style.fontSize='100px';
-                return;
-            }
-            document.documentElement.fontSize=winW/desW * 100 +'px';
-        };
-        computedREM();
-        window.addEventListener('reSize',computedREM);
-
+        ~function anonymous(window) {
+            function computedREM () {
+                let winW=document.documentElement.offsetWidth,
+                    desW=640;
+                if(winW>=desW){
+                    document.documentElement.style.fontSize='100px';
+                    return;
+                }
+                document.documentElement.style.fontSize=winW/desW * 100 +'px';
+            };
+            computedREM();
+            window.addEventListener('resize',computedREM);
+        }(window);
     </script>
 </head>
-
+<main class="mainBox">
+    <header class="headerBox">
+        <img src="img/title.png" alt="title"></header>
+<section class="registerBox">
+    <div class="item">
+        <h3>user:</h3>
+        <input type="text" id="userName" placeholder="请填写您的真实名称或手机号码"><span></span></div>
+    <div class="item">
+        <h3>pin:</h3>
+        <input type="password" id="userPass" placeholder="由6-12位数字组成">
+        <span></span>
+    </div>
+    <a href="javascript:;" class="submit" id="submit">Login</a>
+</section>
+</main>
 <body>
-
+<script src="js/zepto.min.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/axiosDefaults.js"></script>
+<script src="js/login.js"></script>
 </body>
 </html>

@@ -13,9 +13,11 @@ user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
                 let winW=document.documentElement.clientWidth,
                     desW=640;
                 if(winW>=desW){
-                    document.documentElement.style.fonts='100px';
+                    document.documentElement.style.fontSize='100px';
+                    return;
                 }
-                document.documentElement.style.fonts=winW/desW * 100+'px';
+                document.documentElement.style.fontSize=winW/desW * 100+'px';
+
             };
             computedREM();
             window.addEventListener('resize',computedREM);
@@ -24,9 +26,8 @@ user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 </head>
 <body>
 <main class="mainBox">
-    <nav class="navBox"></nav>
     <header class="headerBox">
-        <div class="userInfo">
+     <!--   <div class="userInfo">
             <img src="img/man.png" alt="picture" class="picture">
             <p class="info">
                 <span>name</span>
@@ -35,9 +36,17 @@ user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
             <p class="bio">343</p>
             <div class="vote">7</div>
         </div>
-        <div class="slogan">My name is James</div>
+        <div class="slogan">My name is James</div>-->
+
         <a href="javescript:;" class="voteBtn">select</a>
+        <!--<div class="tip">没有匹配的数据，请返回。</div>-->
     </header>
 </main>
 </body>
+<script src="js/zepto.min.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/axiosDefaults.js"></script>
+<script src="js/component/utills.js"></script>
+<script src="js/component/nav.js"></script>
+<script src="js/detail.js"></script>
 </html>

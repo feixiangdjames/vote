@@ -12,12 +12,12 @@ let voteRender = (function ($) {
             $wrapper=$userLIst.find('ul');
     /*getDate*/
     let queryData=function queryData(){
-         axios.get('/getMatchList',{
-            params:{limit,page,search}/*问号传参*/
-        }).then(result=>{pageNum=parseFloat(result['pageNum']);
-           total=parseFloat(result['total']);
-           return result;
-        }).then(bindHTML);
+            axios.get('/getMatchList',{
+                params:{limit,page,search}/*问号传参*/
+            }).then(result=>{pageNum=parseFloat(result['pageNum']);
+                total=parseFloat(result['total']);
+                return result;
+            }).then(bindHTML);
     };
     //BIND-HTML
     let bindHTML=function bindHTML(result){

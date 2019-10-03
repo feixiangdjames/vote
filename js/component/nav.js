@@ -14,13 +14,13 @@ $(function anonymous() {
         let code = parseFloat(result.code);
         $mainBox.prepend(`<nav class="navBox">
             <a href="index.html">首页</a>
-${code === 0 ? `<a href="javascript:;">登录</a><a href="javascript:;">注册</a>` : `<a href="detail.html"></a><a href="javascript:;">退出</a>`}`);
+${code === 0 ? `<a href="javascript:;">登录</a><a href="javascript:;">注册</a>` : `<a href="detail.html"></a><a href="javascript:;">退出</a>`}</nav>`);
         $navBox = $mainBox.find('navBox');
         $navList = $navBox.find('a');
         return code;
     }).then(result => {
-            if (code === 0) return;
-            return axios.get('/getUser')
+            if (result === 0) return;
+            return axios.get('/getUser');
         }
     ).then(result => {
             if (typeof result !== 'undefined') {
@@ -29,24 +29,25 @@ ${code === 0 ? `<a href="javascript:;">登录</a><a href="javascript:;">注册</
             }
         }
     ).then(() => {
-        $navBox.tap(ev => {
-            let target = ev.target,
-                tarTag = target.tagName,
-                tarInn = target.innerHTML;
-            if (tarTag !== 'A') return;
-            if (tarInn === '登录') {
-                window.location.href = `login.html?fromURL=${encodeURIComponent(window.location.href)}`;
-                return;
-            }
-            if (tarInn === '注册') {
-                window.location.href = `register.html?fromURL=${encodeURIComponent(window.location.href)}`;
-                return;
-            }
-            if (tarInn === '退出') {
-                axios.get('/exitLogin');
-                window.location.href=window.location.href;
-                return;
-            }
-        })
-    })
+        $mainBox.tap(function(ev){
+                 let target = ev.target,
+                    tarTag = target.tagName,
+                    tarInn = target.innerHTML;
+      /*          if (tarTag !== 'A') return;*/
+                if (tarInn === '登录') {
+                    window.location.href = `login.html?fromURL=${encodeURIComponent(window.location.href)}`;
+                    return;
+                }
+                if (tarInn === '注册') {
+                    window.location.href = `register.html?fromURL=${encodeURIComponent(window.location.href)}`;
+                    return;
+                }
+                if (tarInn === '退出') {
+                    axios.get('/exitLogin');
+                    window.location.href = window.location.href;
+                    return;
+                }
+            });
+        }
+    );
 });
