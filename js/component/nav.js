@@ -15,7 +15,7 @@ $(function anonymous() {
         $mainBox.prepend(`<nav class="navBox">
             <a href="index.html">首页</a>
 ${code === 0 ? `<a href="javascript:;">登录</a><a href="javascript:;">注册</a>` : `<a href="detail.html"></a><a href="javascript:;">退出</a>`}</nav>`);
-        $navBox = $mainBox.find('navBox');
+        $navBox = $mainBox.find('.navBox');
         $navList = $navBox.find('a');
         return code;
     }).then(result => {
